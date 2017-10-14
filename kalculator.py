@@ -2,6 +2,7 @@
 ''' A simple menu-driven calculator'''
 
 from travelling_salesman import routes_possible
+from arithmetic_ops import ArithmeticOperations as kalq
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -37,7 +38,7 @@ needing \n\t\t\tto visit a given set of cities')
             menu_selection = input('Enter Option Number [0 - 5]: ')
 
             if menu_selection == '1': # Arithmetic Operations
-                pass
+                kalq.arithmetic_ops_menu()
             elif menu_selection == '2': # SETI
                 pass
             

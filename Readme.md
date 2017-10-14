@@ -5,13 +5,13 @@ kalculator Menu Options
 =======================
 <dl>
     <dt>Arithmetic Operations on two values<dt>
-        <dd>Exponentiation</dd>
-        <dd>Multiplication</dd>
-        <dd>Division </dd>
-        <dd>Floor division or truncating division</dd>
-        <dd>Modulus</dd>
-        <dd>Addititon</dd>
-        <dd>subtraction</dd>
+        <dd>(x<sup>y</sup>) Exponentiation</dd>
+        <dd>(x&times;y) Multiplication</dd>
+        <dd>(x&divide;y) Division </dd>
+        <dd>(x&divide;&divide;y) Floor division or truncating division</dd>
+        <dd>(x&percnt;y) Modulus</dd>
+        <dd>(x&plus;y) Addititon</dd>
+        <dd>(x&minus;y) subtraction</dd>
     <dt>SETI - Search for Extra-terrestrial Intelligence<dt>
         <dd>Calculating the Drake Equation</dd>
     <dt>Calender Calculations</dt>
@@ -29,7 +29,7 @@ Usage
 =====
 Run:
 <pre>
-$ <kbd>pyhon3 kalculator.py</kbd>
+$ <kbd>python3 kalculator.py</kbd>
 </pre>
 
 
