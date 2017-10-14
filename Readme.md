@@ -19,7 +19,9 @@ kalculator Menu Options
     <dt>Age in Seconds</dt>
         <dd></dd>
     <dt>Travelling Salesman Problem</dt>
-        <dd></dd>
+        <dd>Find all possible routes of travel for salesman needing to visit a 
+            given set of cities.
+        </dd>
 </dl>
 
 

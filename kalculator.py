@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 ''' A simple menu-driven calculator'''
 
+from travelling_salesman import routes_possible
+
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
     
@@ -26,6 +28,8 @@ Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
             print('\n\t Option 3 - 1st Day of the month')
             print('\n\t Option 4 - Age in Seconds ')
             print('\n\t Option 5 - Travelling Salesman ')
+            print('\t\t\tFind all possible routes of travel for salesman \
+needing \n\t\t\tto visit a given set of cities')
             print('\n\t Option 0 - Exit')
             print('=' * 78)
 
@@ -44,8 +48,9 @@ Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
                 pass
 
             elif menu_selection == '5': # Travelling Salesman
-                pass
-            
+                print('*' * 78)
+                routes_possible()
+                print('*' * 78)
             elif menu_selection == '0': # Exit
                 print('Exiting......Goodbye!')
                 loop = False
