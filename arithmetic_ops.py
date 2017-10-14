@@ -39,7 +39,7 @@ class ArithmeticOperations(object):
                 calc.subtraction_func()
 
             elif arithmetic_selection == '3': # Exponentiation
-                pass
+                calc.exponentiation_func()
 
             elif arithmetic_selection == '4': # Floor Division
                 pass
@@ -92,7 +92,15 @@ class ArithmeticOperations(object):
         
         Prints num1 - num2 = exponent (exactly two decimal places.)
         ''' 
-        pass
+        print(format(' Exponentiation  ', '.^78' ))
+        print(format(' first value ** second value  ', '.^78' ))
+        num1 = float(input('Enter the first  value: '))
+        num2 = float(input('Enter the second  value: '))
+        print('\n')
+        print('{0} ** {1} = {2:.2f} or {2:.2e}'.format(num1, num2, num1 ** num2))
+        print('\n')
+        return_to_menu = input('Press A key to Return to Main menu ->')
+
     def floor_division_func(self):
         '''performs truncating division on two numbers from user. 
         Takes integers, floating-point and scientific notation numbers. 
