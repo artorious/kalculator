@@ -33,7 +33,7 @@ class ArithmeticOperations(object):
 
             # Handle user's option
             if arithmetic_selection == '1': # Addition
-                pass
+                calc.addititon_func()
 
             elif arithmetic_selection == '2': # Subtraction
                 pass
@@ -51,7 +51,9 @@ class ArithmeticOperations(object):
                 print('Exiting Calculator.....')
                 loop = False
             else:
-                print('Unrecognized Command. Try Again...')
+                print('*' * 78)
+                print('{0} is NOT a menu Option.'.format(arithmetic_selection))
+                print('Try again..........')
 
 
     def addititon_func(self):
@@ -60,7 +62,15 @@ class ArithmeticOperations(object):
         
         Prints num1 + num2 = sum (exactly two decimal places.)
         ''' 
-        pass
+        print(format(' Addition  ', '.^78' ))
+        print(format(' first value + second value  ', '.^78' )) 
+        num1 = float(input('Enter the first  value: '))
+        num2 = float(input('Enter the second  value: '))
+        print('\n')
+        print('{0} + {1} = {2:.2f} or {2:2e}'.format(num1, num2, num1 + num2))
+        print('\n')
+        return_to_menu = input('\tPress A key to Return to Main menu ->')
+
     def subtraction_func(self):
         '''subtracts two numbers from user. 
         Takes integers, floating-point and scientific notation numbers. 

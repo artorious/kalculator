@@ -8,7 +8,7 @@ kalculator Menu Options
         <dd>(x<sup>y</sup>) Exponentiation</dd>
         <dd>(x&times;y) Multiplication</dd>
         <dd>(x&divide;y) Division </dd>
-        <dd>(x&divide;&divide;y) Floor division or truncating division</dd>
+        <dd>(x&#8725;&#8725;y) Floor division or truncating division</dd>
         <dd>(x&percnt;y) Modulus</dd>
         <dd>(x&plus;y) Addititon</dd>
         <dd>(x&minus;y) subtraction</dd>
