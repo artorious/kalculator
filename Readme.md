@@ -24,10 +24,14 @@ kalculator Menu Options
         <dd>The Equation is is simply the multiplication of different factors 
             giving N, the estimated number of detectable civilizations
         </dd>
+<<<<<<< HEAD
         <dd><a href="drake_eq_factors.png">
                 N&equals;R&#8729;p&#8729;n&#8729;f&#8729;i&#8729;c&#8729;L
             </a>
         </dd>
+=======
+        <dd>[N&equals;R&#8729;p&#8729;n&#8729;f&#8729;i&#8729;c&#8729;L](drake_eq_factors.png)</dd>
+>>>>>>> 90ab6577591a7ec751f5f1b7f99398fcec9ec226
     <dt>Calender Calculations</dt>
         <dd>First day of any month and year</dd>
     <dt>Age in Seconds</dt>
