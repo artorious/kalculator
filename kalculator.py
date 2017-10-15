@@ -3,6 +3,7 @@
 
 from travelling_salesman import routes_possible
 from arithmetic_ops import ArithmeticOperations as kalq
+from seti_drake_eq import drake_eq
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -26,6 +27,7 @@ Exponentiation, (*) Multiplication, (/) Division,\n\t\t\t(//) Floor \
 Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
 
             print('\n\t Option 2 - Search for Extra-terrestrial Intelligence ')
+            print('\t\t\tCalculate the Drake Equation')
             print('\n\t Option 3 - 1st Day of the month')
             print('\n\t Option 4 - Age in Seconds ')
             print('\n\t Option 5 - Travelling Salesman ')
@@ -39,8 +41,11 @@ needing \n\t\t\tto visit a given set of cities')
 
             if menu_selection == '1': # Arithmetic Operations
                 kalq.arithmetic_ops_menu()
+                
             elif menu_selection == '2': # SETI
-                pass
+                print('*' * 78)
+                drake_eq()
+                print('*' * 78)
             
             elif menu_selection == '3': # 1st Day of the month
                 pass
@@ -52,6 +57,7 @@ needing \n\t\t\tto visit a given set of cities')
                 print('*' * 78)
                 routes_possible()
                 print('*' * 78)
+
             elif menu_selection == '0': # Exit
                 print('Exiting......Goodbye!')
                 loop = False
