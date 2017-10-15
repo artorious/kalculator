@@ -16,6 +16,7 @@ def routes_possible():
 visit a given \nset of cities.')
     
     # Prompt for user input
+# TODO: Error Checking
     cities = int(input('How many Cities [0 - 999]: '))
     print('For {0} cities, there are {1:,} possible routes'.format(
         cities, factorial(cities) ))

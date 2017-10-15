@@ -64,6 +64,7 @@ class ArithmeticOperations(object):
         ''' 
         print(format(' Addition  ', '.^78' ))
         print(format(' first value + second value  ', '.^78' )) 
+# TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
@@ -79,6 +80,7 @@ class ArithmeticOperations(object):
         '''
         print(format(' Subtraction  ', '.^78' ))
         print(format(' first value - second value  ', '.^78' ))
+# TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
@@ -94,6 +96,7 @@ class ArithmeticOperations(object):
         ''' 
         print(format(' Exponentiation  ', '.^78' ))
         print(format(' first value ** second value  ', '.^78' ))
+# TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
@@ -109,6 +112,7 @@ class ArithmeticOperations(object):
         '''
         print(format(' Floor Division  ', '.^78' ))
         print(format(' first value // second value  ', '.^78' ))
+# TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
@@ -124,6 +128,7 @@ class ArithmeticOperations(object):
         '''
         print(format(' Modulo-Division  ', '.^78' ))
         print(format(' first value % second value  ', '.^78' ))
+# TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')

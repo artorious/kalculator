@@ -37,6 +37,7 @@ def drake_eq():
     print('percentages should be entered as integer values, e.g., 40 and not .40')
     print()
     # get user input
+# TODO: Error Checking
     p = int(input('What percentage of stars do you think have planets?: '))
     n = int(input('How many planets per star do you think can support life?: '))
     f = int(input('What percentage do you think actually develop life?: '))

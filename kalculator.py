@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-''' A simple menu-driven calculator'''
+''' A simple menu-driven calculator
+
+Features include:
+    Arithmetic Operations on two values
+    SETI - Search for Extra-terrestrial Intelligence
+    Travelling Salesman Problem
+    Age in Seconds
+'''
 
 from travelling_salesman import routes_possible
 from arithmetic_ops import ArithmeticOperations as kalq

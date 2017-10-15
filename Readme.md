@@ -24,14 +24,15 @@ kalculator Menu Options
         <dd>The Equation is is simply the multiplication of different factors 
             giving N, the estimated number of detectable civilizations
         </dd>
-        <dd><a href="drake_eq_factors.png">
+        <dd><a href="static/drake_eq_factors.png">
                 N&equals;R&#8729;p&#8729;n&#8729;f&#8729;i&#8729;c&#8729;L
             </a>
         </dd>
     <dt>Calender Calculations</dt>
         <dd>First day of any month and year</dd>
     <dt>Age in Seconds</dt>
-        <dd></dd>
+        <dd>Approximating a person's age in seconds</dd>
+        <dd>Works for dates of birth from January 1, 1900 to present</dd>
     <dt>Travelling Salesman Problem</dt>
         <dd>Find all possible routes of travel for salesman needing to visit a 
             given set of cities.
