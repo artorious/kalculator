@@ -27,14 +27,18 @@ current_month = datetime.date.today().month
 current_day = datetime.date.today().day
 current_year = datetime.date.today().year
 
-# Test Output
-print('\nThe date of birth read is: ', month_birth, day_birth, year_birth)
-print('The current date read is: ', current_month, current_day, current_year)
+# Determine number of seconds in a day, avaerage month & average year
+# TODO: Error Checking
+numsecs_day = 24 * 60 * 60
+numsecs_year = 365 * numsecs_day
+# NOTE: Add an extra day while doing a 4yr avg to account for leap yr
+avg_numsecs_year = ((numsecs_year * 4) + numsecs_day) // 4
+avg_numsecs_month = avg_numsecs_year // 12
 
-# TODO: Stage 2:
-#     - Calculate number of seconds in average   month, year and day.
-
-
+# Test output
+print('Number of Seconds per Day {0:,}'.format(numsecs_day))
+print('Average Seconds per month {0:,}'.format(avg_numsecs_month))
+print('Average Seconds per year {0:,}'.format(avg_numsecs_year))
 
 # TODO: Stage 3:
 #     - Calculate approximate age in seconds
