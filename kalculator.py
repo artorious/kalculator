@@ -11,6 +11,7 @@ Features include:
 from travelling_salesman import routes_possible
 from arithmetic_ops import ArithmeticOperations as kalq
 from seti_drake_eq import drake_eq
+from age_in_secs import AgeInSecs
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -25,9 +26,9 @@ class CalculateSomething(object):
         loop = True
 
         while loop==True:
-            print('=' * 78)
-            print(format(' CALCULATOR MENU ', '=^78'))
-            print('=' * 78)
+            print('=' * 80)
+            print(format(' CALCULATOR MENU ', '=^80'))
+            print('=' * 80)
             # Prompt the user for type of calculation
             print('\n\t Option 1 - Simple Arithmetic operations.\n\n\t\t\t(**) \
 Exponentiation, (*) Multiplication, (/) Division,\n\t\t\t(//) Floor \
@@ -37,11 +38,12 @@ Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
             print('\t\t\tCalculate the Drake Equation')
             print('\n\t Option 3 - 1st Day of the month')
             print('\n\t Option 4 - Age in Seconds ')
+            print('\t\t\tCalculate age in seconds and compare two people\'s ages.')
             print('\n\t Option 5 - Travelling Salesman ')
             print('\t\t\tFind all possible routes of travel for salesman \
 needing \n\t\t\tto visit a given set of cities')
             print('\n\t Option 0 - Exit')
-            print('=' * 78)
+            print('=' * 80)
 
             # Wait for user input
             menu_selection = input('Enter Option Number [0 - 5]: ')
@@ -50,27 +52,29 @@ needing \n\t\t\tto visit a given set of cities')
                 kalq.arithmetic_ops_menu()
                 
             elif menu_selection == '2': # SETI
-                print('*' * 78)
+                print('*' * 80)
                 drake_eq()
-                print('*' * 78)
+                print('*' * 80)
             
             elif menu_selection == '3': # 1st Day of the month
                 pass
 
             elif menu_selection == '4': # Age in secs
-                pass
+                print('*' * 80)
+                AgeInSecs.menu_options()
+                print('*' * 80)
 
             elif menu_selection == '5': # Travelling Salesman
-                print('*' * 78)
+                print('*' * 80)
                 routes_possible()
-                print('*' * 78)
+                print('*' * 80)
 
             elif menu_selection == '0': # Exit
                 print('Exiting......Goodbye!')
                 loop = False
 
             else:
-                print('*' * 78)
+                print('*' * 80)
                 print('{0} is NOT a menu Option.'.format(menu_selection))
                 print('Try again..........')
 

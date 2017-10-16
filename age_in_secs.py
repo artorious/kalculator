@@ -21,7 +21,8 @@ class AgeInSecs(object):
         self.numsecs_day = 24 * 60 * 60
         self.numsecs_year = 365 * self.numsecs_day
         # NOTE: Added an extra day while doing a 4yr avg to account for leap yr
-        self.avg_numsecs_year = ((self.numsecs_year * 4) + self.numsecs_day) // 4
+        self.avg_numsecs_year = ((self.numsecs_year * 4) + self.numsecs_day) \
+                                // 4
         self.avg_numsecs_month = self.avg_numsecs_year // 12
         
     def menu_options():
@@ -33,12 +34,14 @@ class AgeInSecs(object):
             print("=" * 78)
             print(format(' AGE IN SECONDS ', '=^78'))
             print("=" * 78)
-            print('Compute the approximate age in seconds of person based on a \
-provided \ndate of birth.\n\nOnly ages for dates of birth from 1900 \
-and after can be computed\n')
+            print(format(' Compute the approximate age in seconds of person', 
+'-^78')) 
+            print(format(' based on a provided date of birth. ', '-^78')) 
+            print(format(' Only ages for dates from 1900 and after can be \
+computed. ', '-^78')) 
             print("=" * 78)
             print('\tOperation 1: Calculate Your age in seconds')
-            print('\tOperation 2:Compare two peoples ages in seconds')
+            print('\tOperation 2: Compare two peoples ages in seconds')
             print('\tOperation 0: Exit Age-In-Secs Calculator')
             print('-' * 78)
         # User Input
@@ -73,8 +76,10 @@ and after can be computed\n')
                             ((month_birth - 1) * self.avg_numsecs_month) + \
                             (day_birth * self.numsecs_day)
 
-        num_secs_1900_today = ((self.current_year - 1900) * self.avg_numsecs_year) + \
-                            ((self.current_month - 1) * self.avg_numsecs_month) + \
+        num_secs_1900_today = ((self.current_year - 1900) * 
+                                self.avg_numsecs_year) + \
+                            ((self.current_month - 1) * 
+                                self.avg_numsecs_month) + \
                             (self.current_day * self.numsecs_day)
 
         age_in_secs = num_secs_1900_today - num_secs_1900_dob
@@ -84,7 +89,7 @@ and after can be computed\n')
         print('\nYou are approx. {0:,} seconds old.'.format(age_in_secs))
         print('-' * 78)
         print('\nYou\'re Age in various units of time')
-        print('\t{0:,} seconds old.'.format(age_in_secs))
+        print('\n\t{0:,} seconds old.'.format(age_in_secs))
         print('\t{0:,.2f} Minutes old.'.format(age_in_secs/60))
         print('\t{0:,.2f} hours old.'.format(age_in_secs/3600))
         print('\t{0:,.2f} Days old.'.format(age_in_secs/86400))
@@ -105,14 +110,15 @@ and after can be computed\n')
 
         print('-' * 78)
         print('Person2 - DOB Details')
+        print('-' * 78)
         month_birth_p2 = int(input('Enter Month Born [1-12]: '))
         day_birth_p2 = int(input('Enter Day of Birth [1-31]: '))
         year_birth_p2 = int(input('Enter Year of Birth [YYYY]: '))
 
 
         # Calculate approximate age in second
-        numsecs_1900_dob_p1 = ((year_birth_p1 - 1900) * self.avg_numsecs_year) + \
-                                ((month_birth_p1 - 1) * self.avg_numsecs_month) + \
+        numsecs_1900_dob_p1 = ((year_birth_p1 - 1900) * self.avg_numsecs_year) \
+                                + ((month_birth_p1 - 1) * self.avg_numsecs_month) + \
                                 (day_birth_p1 * self.numsecs_day)
 
         numsecs_1900_dob_p2 = ((year_birth_p2 - 1900) * self.avg_numsecs_year) + \
@@ -132,7 +138,7 @@ and after can be computed\n')
         print('\nYou\'re approx. ages are {0:,} seconds apart.'.format(age_difference))
         print('-' * 78)
         print('\nYou\'re Age difference in various units of time')
-        print('\t{0:,} seconds'.format(age_difference))
+        print('\n\t{0:,} seconds'.format(age_difference))
         print('\t{0:,.2f} Minutes'.format(age_difference/60))
         print('\t{0:,.2f} hours'.format(age_difference/3600))
         print('\t{0:,.2f} Days'.format(age_difference/86400))
