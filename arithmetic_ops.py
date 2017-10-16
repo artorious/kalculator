@@ -17,9 +17,9 @@ class ArithmeticOperations(object):
         loop = True
 
         while loop == True:
-            print('-' * 78)
-            print(format(' Arithmetic Menu Options ', '-^78'))
-            print('-' * 78)
+            print('-' * 80)
+            print(format(' Arithmetic Menu Options ', '-^80'))
+            print('-' * 80)
             print('\tOperation 1: Addition\t\t(x + y)\n')
             print('\tOperation 2: Subtraction\t(x - y)\n')
 
@@ -27,7 +27,7 @@ class ArithmeticOperations(object):
             print('\tOperation 4: Floor division\t(x // y)\n')
             print('\tOperation 5: Modulus division\t(x % y)\n')
             print('\tOperation 0: Exit Arithmetic Calculator')
-            print('-' * 78)
+            print('-' * 80)
             # User input
             arithmetic_selection = input('Select Operation [0-5]: ')
 
@@ -51,8 +51,8 @@ class ArithmeticOperations(object):
                 print('Exiting Calculator.....')
                 loop = False
             else:
-                print('*' * 78)
-                print('{0} is NOT a menu Option.'.format(arithmetic_selection))
+                print('*' * 80)
+                print('{0}  NOT a menu Option.'.format(arithmetic_selection))
                 print('Try again..........')
 
 
@@ -62,14 +62,16 @@ class ArithmeticOperations(object):
         
         Prints num1 + num2 = sum (exactly two decimal places.)
         ''' 
-        print(format(' Addition  ', '.^78' ))
-        print(format(' first value + second value  ', '.^78' )) 
+        print(format(' Addition  ', '.^80' ))
+        print(format(' first value + second value  ', '.^80' )) 
 # TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
-        print('{0} + {1} = {2:,.2f} or {2:2e}'.format(num1, num2, num1 + num2))
+        print(' Result: {0} + {1} = {2:,.2f} or {2:2e}'.format(num1, num2, 
+                                                                num1 + num2))
         print('\n')
+        print('.' * 80)
         return_to_menu = input('\tPress A key to Return to Main menu ->')
 
     def subtraction_func(self):
@@ -78,13 +80,14 @@ class ArithmeticOperations(object):
         
         Prints num1 - num2 = difference (exactly two decimal places.)
         '''
-        print(format(' Subtraction  ', '.^78' ))
-        print(format(' first value - second value  ', '.^78' ))
+        print(format(' Subtraction  ', '.^80' ))
+        print(format(' first value - second value  ', '.^80' ))
 # TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
-        print('{0} - {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, num1 - num2))
+        print('Result: {0} - {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
+                                                                num1 - num2))
         print('\n')
         return_to_menu = input('\tPress A key to Return to Main menu ->') 
 
@@ -94,13 +97,14 @@ class ArithmeticOperations(object):
         
         Prints num1 - num2 = exponent (exactly two decimal places.)
         ''' 
-        print(format(' Exponentiation  ', '.^78' ))
-        print(format(' first value ** second value  ', '.^78' ))
+        print(format(' Exponentiation  ', '.^80' ))
+        print(format(' first value ** second value  ', '.^80' ))
 # TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
-        print('{0} ** {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, num1 ** num2))
+        print('Result: {0} ** {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
+                                                                num1 ** num2))
         print('\n')
         return_to_menu = input('Press A key to Return to Main menu ->')
 
@@ -110,13 +114,14 @@ class ArithmeticOperations(object):
         
         Prints num1 // num2 = result (exactly two decimal places.)
         '''
-        print(format(' Floor Division  ', '.^78' ))
-        print(format(' first value // second value  ', '.^78' ))
+        print(format(' Floor Division  ', '.^80' ))
+        print(format(' first value // second value  ', '.^80' ))
 # TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
-        print('{0} // {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, num1 // num2))
+        print('Result: {0} // {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
+                                                                num1 // num2))
         print('\n')
         return_to_menu = input('\tPress A key to Return to Main menu ->')
 
@@ -126,13 +131,14 @@ class ArithmeticOperations(object):
         
         Prints num1 % num2 = result (exactly two decimal places.)
         '''
-        print(format(' Modulo-Division  ', '.^78' ))
-        print(format(' first value % second value  ', '.^78' ))
+        print(format(' Modulo-Division  ', '.^80' ))
+        print(format(' first value % second value  ', '.^80' ))
 # TODO: Error Checking
         num1 = float(input('Enter the first  value: '))
         num2 = float(input('Enter the second  value: '))
         print('\n')
-        print('{0} % {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, num1 % num2))
+        print('Result: {0} % {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
+                                                                num1 % num2))
         print('\n')
         return_to_menu = input('\tPress A key to Return to Main menu ->')
 
