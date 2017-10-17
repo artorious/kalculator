@@ -13,11 +13,11 @@ class AgeInSecs(object):
     
     def __init__(self):
         '''Initialization function.'''
-        # Get current month, day, year
+        # Compute current month, day, year
         self.current_month = datetime.date.today().month
         self.current_day = datetime.date.today().day
         self.current_year = datetime.date.today().year
-        # Determine number of seconds in a day, average month & average year
+        # Hard-code no. of secs in a day, avg. month & avg. year
         self.numsecs_day = 24 * 60 * 60
         self.numsecs_year = 365 * self.numsecs_day
         # NOTE: Added an extra day while doing a 4yr avg to account for leap yr
@@ -28,9 +28,9 @@ class AgeInSecs(object):
     def menu_options():
         '''Displays Age-In-Secs Menu Options'''
         calc = AgeInSecs() # Init the class
-        loop = True
+        menu_loop = True
 
-        while loop == True:
+        while menu_loop == True:
             print("=" * 78)
             print(format(' AGE IN SECONDS ', '=^78'))
             print("=" * 78)
@@ -54,7 +54,7 @@ computed. ', '-^78'))
                 calc.compare_ages()
             elif menu_selection == '0': # Exit
                 print('Exiting Age-In-Secs calculator')
-                loop = False
+                menu_loop = False
             else:
                 print('*' * 78)
                 print('{0} is NOT a menu Option.'.format(menu_selection))
@@ -64,36 +64,93 @@ computed. ', '-^78'))
 
     def cal_age_in_secs(self):
         '''Calculates approximate age in seconds'''
-# TODO: Error Checking
-        # Get month, day, year of birth
-        print( format(' CALCULATE AGE IN SECS ', '=^78'))
-        print('-' * 78)
-        print('DOB Details')
-        month_birth = int(input('Enter month born [1-12]: '))
-        day_birth = int(input('Enter day born [1-31]: '))
-        year_birth = int(input('Enter month born [YYYY]: '))
-        num_secs_1900_dob = ((year_birth - 1900) * self.avg_numsecs_year) + \
-                            ((month_birth - 1) * self.avg_numsecs_month) + \
-                            (day_birth * self.numsecs_day)
 
-        num_secs_1900_today = ((self.current_year - 1900) * 
-                                self.avg_numsecs_year) + \
-                            ((self.current_month - 1) * 
-                                self.avg_numsecs_month) + \
-                            (self.current_day * self.numsecs_day)
+        calculation_loop = True
 
-        age_in_secs = num_secs_1900_today - num_secs_1900_dob
+        while calculation_loop == True: 
+            # Get month, day, year of birth
+            print( format(' CALCULATE AGE IN SECS ', '=^78'))
+            print('-' * 78)
+            print('DOB Details - MM-DD-YYYY')
+            
+            month_birth = input('Enter month born [1-12]: ')
+            # Error checking: Check for valid month of birth input
+            try:
+                if int(month_birth) in range(1, 13):
+                    day_birth = input('Enter day born [1-31]: ')
+                    # Error checking: Check for valid day of birth input
+                    try:
+                        if int(day_birth) in range(1, 32):
+                            year_birth = input('Enter year born [YYYY]: ')
+                            # Error checking: Check for valid year of birth input
+                            try:
+                                if int(year_birth) in range(1900, self.current_year):
+                                    
+                                    num_secs_1900_dob = \
+                                        ((int(year_birth) - 1900) * 
+                                        self.avg_numsecs_year) + \
+                                        ((int(month_birth) - 1) * 
+                                        self.avg_numsecs_month) + \
+                                        (int(day_birth) * self.numsecs_day)
 
-        # Display Results - Person's age in seconds
-        print( format(' AGE IN SECS RESULTS ', '=^78'))
-        print('\nYou are approx. {0:,} seconds old.'.format(age_in_secs))
-        print('-' * 78)
-        print('\nYou\'re Age in various units of time')
-        print('\n\t{0:,} seconds old.'.format(age_in_secs))
-        print('\t{0:,.2f} Minutes old.'.format(age_in_secs/60))
-        print('\t{0:,.2f} hours old.'.format(age_in_secs/3600))
-        print('\t{0:,.2f} Days old.'.format(age_in_secs/86400))
-        print('\t{0:,.2f} Years  old.'.format(age_in_secs/31536000))
+                                    num_secs_1900_today = \
+                                        ((self.current_year - 1900) * 
+                                        self.avg_numsecs_year) + \
+                                        ((self.current_month - 1) * 
+                                        self.avg_numsecs_month) + \
+                                        (self.current_day * self.numsecs_day)
+
+                                    age_in_secs = \
+                                        num_secs_1900_today - num_secs_1900_dob
+
+                                    # Display Results - Person's age in seconds
+                                    print(format(' AGE IN SECS RESULTS ', 
+                                        '=^78'))
+                                    print('\nApprox. Age: {0:,} seconds old.'
+                                        .format(age_in_secs))
+                                    print('~' * 78)
+                                    print('\nYou\'re Age in various units of time')
+                                    print('~' * 78)
+                                    print('\n\t{0:,} seconds old.'
+                                        .format(age_in_secs))
+                                    print('\t{0:,.2f} Minutes old.'
+                                        .format(age_in_secs/60))
+                                    print('\t{0:,.2f} hours old.'
+                                        .format(age_in_secs/3600))
+                                    print('\t{0:,.2f} Days old.'
+                                        .format(age_in_secs/86400))
+                                    print('\t{0:,.2f} Years  old.'
+                                        .format(age_in_secs/31536000))                        
+
+                                    calculation_loop = False
+
+                            except ValueError as invalid_year_input:
+                                print('-' * 80)
+                                print('ERROR: ', invalid_year_input)
+                                print('*' * 80)
+                                print('\n{0} is not an integer in range [1900 \
+- {1}]....TRY AGAIN...\n'.format(year_birth, self.current_year))
+            
+                    except ValueError as invalid_day_input:
+                        print('-' * 80)
+                        print('ERROR: ', invalid_day_input)
+                        print('*' * 80)
+                        print('\n{0} is not an integer in range [1-31]....TRY \
+AGAIN...\n'.format(day_birth))  
+
+            except ValueError as invalid_month_input:
+                print('-' * 80)
+                print('ERROR: ', invalid_month_input)
+                print('*' * 80)
+                print('\n{0} is NOT an integer in range [1-12]....TRY AGAIN....\
+\n'.format(month_birth))
+            else:
+                print('\n....TRY AGAIN...\n')
+                calculation_loop = False
+                 
+           
+        
+        
     
     def compare_ages(self):
         '''Compares two peoples ages in secs.'''
