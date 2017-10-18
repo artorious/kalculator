@@ -21,11 +21,11 @@ class CalculateSomething(object):
         pass
 
     def calculator_menu():
-        '''loop displays a list of options that the user can perform'''
+        '''menu_loop displays a list of options that the user can perform'''
 
-        loop = True
+        menu_loop = True
 
-        while loop==True:
+        while menu_loop==True:
             print('=' * 80)
             print(format(' CALCULATOR MENU ', '=^80'))
             print('=' * 80)
@@ -71,7 +71,7 @@ needing \n\t\t\tto visit a given set of cities')
 
             elif menu_selection == '0': # Exit
                 print('Exiting......Goodbye!')
-                loop = False
+                menu_loop = False
 
             else:
                 print('*' * 80)

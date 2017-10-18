@@ -14,9 +14,9 @@ class ArithmeticOperations(object):
     def arithmetic_ops_menu():
         '''Displays Arithmetic  Menu Options'''
         calc = ArithmeticOperations() # Init the class
-        loop = True
+        menu_loop = True
 
-        while loop == True:
+        while menu_loop == True:
             print('-' * 80)
             print(format(' Arithmetic Menu Options ', '-^80'))
             print('-' * 80)
@@ -49,7 +49,7 @@ class ArithmeticOperations(object):
 
             elif arithmetic_selection == '0':
                 print('Exiting Calculator.....')
-                loop = False
+                menu_loop = False
             else:
                 print('*' * 80)
                 print('{0}  NOT a menu Option.'.format(arithmetic_selection))
