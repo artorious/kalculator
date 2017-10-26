@@ -12,3 +12,17 @@ Displays a calendar month for any given month between January 1800 and December
 # TODO: Display the calender month, given the day of the week that the first
 # day falls on, and the number of days in the month
 
+# Data Description
+##################
+# TODO: Program Should Display:
+#   Month and year entered
+#   Whether the year is leap or not
+#   Number of days in the month
+#   Which day the first day of the month falls on
+
+# TODO: data representation
+#   year -> User input (integer)
+#   month -> User input (integer)
+#   leap_year -> Computed (Boolean)
+#   num_days_in_month -> Computed (integer)
+#   day_of_week -> Computed (integer)
