@@ -11,7 +11,7 @@ kalculator Menu Options
         <dd>(x&#8725;&#8725;y) Floor division or truncating division</dd>
         <dd>(x&percnt;y) Modulus</dd>
         <dd>(x&plus;y) Addititon</dd>
-        <dd>(x&minus;y) subtraction</dd>
+        <dd>(x&minus;y) Subtraction</dd>
     <dt>SETI - Search for Extra-terrestrial Intelligence<dt>
         <dd>Calculating the <i>Drake Equation</i></dd>
         <dd>Dr. Frank Drake conducted the first search for radio signals from
@@ -37,6 +37,8 @@ kalculator Menu Options
         <dd>Find all possible routes of travel for salesman needing to visit a 
             given set of cities.
         </dd>
+    <dt>Coin Change Exercise Program</dt>
+        <dd>An exercise for children learning to count change</dd>
 </dl>
 
 
