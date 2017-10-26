@@ -1,0 +1,28 @@
+An algorithm for determining the day of the week for any date between January 
+1, 1800 and December 31, 2099.
+
+	1. Let century_digits be equal to the first two digits of the year.
+	2. Let year_digits be equal to the last two digits of the year.
+	3. Let Value be equal to year_digits + floor(year_digits/4)
+	4. If century_digits equals 18, then add 2 to value, else
+		If century_digits equals 20, then add 6 to value.
+	5. If the month is equal to January and year is not a leap year,
+		then add 1 to value,else,
+		If the month is equal to February and the year is a leap year, then
+		add 3 to value; If not a leap year, then add 6 to value, else,
+		If the month is equal to March or November,then add 4 to value, else,
+		If the month is equal to May,then add 2 to value, else,
+		If the month is equal to ,then add  to value, else,
+		If the month is equal to June,then add 5 to value, else,
+		If the month is equal to August,then add 3 to value, else,
+		If the month is equal to October,then add 1 to value, else,
+		If the month is equal to September or December,then add 6 to value,
+	6. Set value equal to (value + day)mod7.
+	7. If value is equal to 1, then the day of the week is Sunday; else
+		If value is equal to 2, day of the week is Monday; else
+		If value is equal to 3, day of the week is Tuesday; else
+		If value is equal to 4, day of the week is Wednesday; else
+		If value is equal to 5, day of the week is Thursday; else
+		If value is equal to 6, day of the week is Friday; else
+		If value is equal to 0, day of the week is Saturday; else
+Note: There is no value to add for the months of April and July.

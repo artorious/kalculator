@@ -1,0 +1,10 @@
+An algorithm for determinig leap years.
+    if a year is (evenly) divisible by 4, then it is a leap year. However there
+    are a couple of exceptions. If the year is divisible by 4 but is also 
+    divisible by 100, then it is not a leap year— unless, it is also divisible 
+    by 400, then it is. For example, 1996 and 2000 were leap years, but 1900 was not. 
+
+    if (year % 4 == 0) and (not (year % 100 == 0) or (year % 400 == 0))
+        leap_year = True
+    else:
+        leap_year = False
