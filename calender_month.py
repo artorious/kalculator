@@ -3,26 +3,21 @@
 
 Displays a calendar month for any given month between January 1800 and December
 2099. 
+    - The calender month 
+    - The given the day of the week that the first day falls on  
+    - The number of days in the month
 '''
-# Problem Analysis
-##################
-# TODO: compute the first day of a given month for years 
-# 1800-2099
 
-# TODO: Display the calender month, given the day of the week that the first
-# day falls on, and the number of days in the month
+# TODO: Program Initialization
 
-# Data Description
-##################
-# TODO: Program Should Display:
-#   Month and year entered
-#   Whether the year is leap or not
-#   Number of days in the month
-#   Which day the first day of the month falls on
+# TODO: Program greeting
 
-# TODO: data representation
-#   year -> User input (integer)
-#   month -> User input (integer)
-#   leap_year -> Computed (Boolean)
-#   num_days_in_month -> Computed (integer)
-#   day_of_week -> Computed (integer)
+# TODO: Get month(int) & year(int) - User Input 
+
+# TODO: Determine if entered year is leap_year(bool)
+
+# TODO: Determine num_days_in_month(int) entered
+
+# TODO: Determine day_of_week for entered month & year
+
+# TODO: Display calender_month
