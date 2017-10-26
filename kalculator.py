@@ -12,6 +12,7 @@ from travelling_salesman import routes_possible
 from arithmetic_ops import ArithmeticOperations as kalq
 from seti_drake_eq import drake_eq
 from age_in_secs import AgeInSecs
+from coin_change import coin_change_calculator
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -22,7 +23,7 @@ class CalculateSomething(object):
 
     def calculator_menu():
         '''menu_loop displays a list of options that the user can perform'''
-
+        # Init
         menu_loop = True
 
         while menu_loop==True:
@@ -42,6 +43,8 @@ Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
             print('\n\t Option 5 - Travelling Salesman ')
             print('\t\t\tFind all possible routes of travel for salesman \
 needing \n\t\t\tto visit a given set of cities')
+            print('\n\t Option 6 - Coin Change Program ')
+            print('\t\t\tAn exercise for children learning to count change')
             print('\n\t Option 0 - Exit')
             print('=' * 80)
 
@@ -67,6 +70,11 @@ needing \n\t\t\tto visit a given set of cities')
             elif menu_selection == '5': # Travelling Salesman
                 print('*' * 80)
                 routes_possible()
+                print('*' * 80)
+
+            elif menu_selection == '6': # Coin Change
+                print('*' * 80)
+                coin_change_calculator()
                 print('*' * 80)
 
             elif menu_selection == '0': # Exit
