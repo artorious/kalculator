@@ -28,8 +28,13 @@ kalculator Menu Options
                 N&equals;R&#8729;p&#8729;n&#8729;f&#8729;i&#8729;c&#8729;L
             </a>
         </dd>
-    <dt>Calender Calculations</dt>
-        <dd>First day of any month and year</dd>
+    <dt>Calender Month Program</dt>
+        <dd>Display a calender month for any given month between January 1800 
+            and December 2099
+        </dd>
+        <dd>
+            <img src='static/calendar_month_display_format.png' alt='The calender format of the month'>
+        </dd>
     <dt>Age in Seconds</dt>
         <dd>Approximating a person's age in seconds</dd>
         <dd>Works for dates of birth from January 1, 1900 to present</dd>
