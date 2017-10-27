@@ -82,12 +82,34 @@ while not terminate:
             value += 1
         
         # Day value in the day of the week algorithm
-        # No need to convert raw output to actual name (e.g Monday)
         # Only the day_of_week for the first day of any given month is needed
         # all remaining days follow sequentially
         day_of_week = (value + 1) % 7 # 1-Sun, 2-Mon, ......, 6-Fri, 0-Sat
 
-        # Display Results
-        print('Day of the week is {0}'.format(day_of_week))
+        # Determine month_name
+        if month == 1:
+            month_name = 'January'
+        elif month == 2:
+            month_name = 'February'
+        elif month == 3:
+            month_name == 'March'
+        elif month == 4:
+            month_name = 'April'
+        elif month == 5:
+            month_name = 'May'
+        elif month == 6:
+            month_name = 'June'
+        elif month == 7:
+            month_name = 'July'
+        elif month == 8:
+            month_name = 'August'
+        elif month == 9:
+            month_name = 'September'
+        elif month == 10:
+            month_name = 'October'
+        elif month == 11:
+            month_name = 'November'
+        else:
+            month_name = 'December'
 
 # TODO: Display calender_month
