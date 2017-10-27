@@ -50,13 +50,44 @@ while not terminate:
         else:
             num_days_in_month = 28
         
-        print('\n{0}, {1} has {2} days.'.format(month, year, num_days_in_month))
-# Test for leap (temp Code)
-        if leap_year:
-            print('{0} is a Leap Year.'.format(year))
-        else:
-            print('{0} is NOT a Leap Year.'.format(year))
+        # Determine day_of_week for entered month & year
+        century_digits = year // 100    # extract first two digits of the year
+        year_digits = year % 100    # extract last two digits of the year
+        # Follow the day of the week algorithm appended in pseudocode
+        value = year_digits + (year_digits // 4)
 
-# TODO: Determine day_of_week for entered month & year
+        if century_digits == 18:
+            value += 2
+        elif century_digits == 20:
+            value += 6
+
+        if month == 1 and not leap_year:
+            value += 1
+        elif month == 2:
+            if leap_year:
+                value += 3
+            else:
+                value += 4
+        elif month == 3 or month == 11:
+            value += 4
+        elif month == 5:
+            value += 2
+        elif month == 6:
+            value += 5
+        elif month == 8:
+            value += 3
+        elif month == 9 or month == 12:
+            value += 6
+        elif month == 10:
+            value += 1
+        
+        # Day value in the day of the week algorithm
+        # No need to convert raw output to actual name (e.g Monday)
+        # Only the day_of_week for the first day of any given month is needed
+        # all remaining days follow sequentially
+        day_of_week = (value + 1) % 7 # 1-Sun, 2-Mon, ......, 6-Fri, 0-Sat
+
+        # Display Results
+        print('Day of the week is {0}'.format(day_of_week))
 
 # TODO: Display calender_month
