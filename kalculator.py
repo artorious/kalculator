@@ -8,11 +8,11 @@ Features include:
     Age in Seconds
 '''
 
-from travelling_salesman import routes_possible
-from arithmetic_ops import ArithmeticOperations as kalq
-from seti_drake_eq import drake_eq
-from age_in_secs import AgeInSecs
-from coin_change import coin_change_calculator
+from scripts.travelling_salesman import routes_possible
+from scripts.arithmetic_ops import ArithmeticOperations as kalq
+from scripts.seti_drake_eq import drake_eq
+from scripts.age_in_secs import AgeInSecs
+from scripts.coin_change import coin_change_calculator
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
