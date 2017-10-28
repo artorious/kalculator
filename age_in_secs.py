@@ -24,7 +24,7 @@ class AgeInSecs(object):
         self.avg_numsecs_year = ((self.numsecs_year * 4) + self.numsecs_day) \
                                 // 4
         self.avg_numsecs_month = self.avg_numsecs_year // 12
-        
+    
     def menu_options():
         '''Displays Age-In-Secs Menu Options'''
         
@@ -164,7 +164,6 @@ AGAIN...\n'.format(day_birth))
                 print('\n....TRY AGAIN...\n')
                 calculation_loop = False
                  
-           
         
         
     

@@ -56,8 +56,15 @@ $ <kbd>python3 kalculator.py</kbd>
 
 Pseudocode Reference
 ====================
+<<<<<<< HEAD
 #Calender month program:
 #    []()
+=======
+Calender month program:
+[An algorithm for determining the day of the week for any date between January 1, 1800 and December 31, 2099.](pseudocode/day_of_week_algorithm_pseudo.txt)
+<br>
+[An algorithm for determinig leap years]ph(pseudocode/leap_year_algorithm_pseudo.txt)
+>>>>>>> dev-calender
 
 Attribution
 ===========
