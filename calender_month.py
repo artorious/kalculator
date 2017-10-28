@@ -3,7 +3,7 @@
 
 Displays a calendar month for any given month between January 1800 and December 2099. 
 
-Features:
+Display Features:
     - The calender month 
     - The given the day of the week that the first day falls on  
     - The number of days in the month
@@ -86,7 +86,7 @@ while not terminate:
         # all remaining days follow sequentially
         day_of_week = (value + 1) % 7 # 1-Sun, 2-Mon, ......, 6-Fri, 0-Sat
 
-        # Determine month_name
+        # Determine  corresponding month_name
         if month == 1:
             month_name = 'January'
         elif month == 2:
@@ -112,4 +112,39 @@ while not terminate:
         else:
             month_name = 'December'
 
-# TODO: Display calender_month
+        # Display calender_month
+
+        # Display month and year heading
+        print('\n {0} {1}'.format(month_name, year))
+
+        # Display rows of dates
+        if day_of_week == 0:
+            starting_col = 7
+        else:
+            starting_col = day_of_week
+
+        current_col = 1
+        column_width = 4
+        blank_char = ' '
+        blank_column = format(blank_char, str(column_width))
+
+        while current_col <= starting_col:
+            print(blank_column, end='')
+            current_col += 1
+        
+        current_day = 1
+
+        while current_day <= num_days_in_month:
+            if current_day < 10:
+                print(format(blank_char, '3') + str(current_day), end='')
+            else:
+                print(format(blank_char, '2') + str(current_day), end='')
+            
+            if current_col <= 7:
+                current_col += 1 
+            else:
+                current_col = 1
+                print()
+
+            current_day += 1
+        print('\n')
