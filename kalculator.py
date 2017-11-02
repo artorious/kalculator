@@ -13,6 +13,7 @@ from scripts.arithmetic_ops import ArithmeticOperations as kalq
 from scripts.seti_drake_eq import drake_eq
 from scripts.age_in_secs import AgeInSecs
 from scripts.coin_change import coin_change_calculator
+from scripts.calender_month import calender_month_format
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -37,7 +38,7 @@ Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
 
             print('\n\t Option 2 - Search for Extra-terrestrial Intelligence ')
             print('\t\t\tCalculate the Drake Equation')
-            print('\n\t Option 3 - 1st Day of the month')
+            print('\n\t Option 3 - Calender - Month View')
             print('\n\t Option 4 - Age in Seconds ')
             print('\t\t\tCalculate age in seconds and compare two people\'s ages.')
             print('\n\t Option 5 - Travelling Salesman ')
@@ -59,8 +60,10 @@ needing \n\t\t\tto visit a given set of cities')
                 drake_eq()
                 print('*' * 80)
             
-            elif menu_selection == '3': # 1st Day of the month
-                pass
+            elif menu_selection == '3': # Calender month-view
+                print('*' * 80)
+                calender_month_format()
+                print('*' * 80)
 
             elif menu_selection == '4': # Age in secs
                 print('*' * 80)
