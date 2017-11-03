@@ -119,10 +119,13 @@ def calender_month_format():
                         month_name = 'December'
 
                     # Display calender_month
-
+                    
                     # Display month and year heading
-                    print('\n {0} {1}'.format(month_name, year))
-
+                    if leap_year:
+                        print('\n {0} {1} (Leap Year)\n'.format(month_name, year))
+                    else:
+                        print('\n {0} {1}\n'.format(month_name, year))
+                    
                     # Display rows of dates
                     if day_of_week == 0:
                         starting_col = 7
@@ -133,6 +136,12 @@ def calender_month_format():
                     column_width = 4
                     blank_char = ' '
                     blank_column = format(blank_char, str(column_width))
+                    week_days = ('Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa')
+
+                    # Display row of days in week
+                    for day in week_days:
+                        print(format(blank_char, '2') + day, end='')
+                    print()
 
                     while current_col < starting_col:
                         print(blank_column, end='')
