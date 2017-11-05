@@ -44,6 +44,8 @@ kalculator Menu Options
         </dd>
     <dt>Coin Change Exercise Program</dt>
         <dd>An exercise for children learning to count change</dd>
+    <dt>Chinese Zodiac Program</dt>
+        <dd>Dispaly your zodiac sign and associated personal characteristics.</dd>
 </dl>
 
 

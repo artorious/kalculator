@@ -14,6 +14,7 @@ from scripts.seti_drake_eq import drake_eq
 from scripts.age_in_secs import AgeInSecs
 from scripts.coin_change import coin_change_calculator
 from scripts.calender_month import calender_month_format
+from scripts.chinese_zodiac import zodiac_sign
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -46,6 +47,9 @@ Division,(%) Modulus, (+) Addition,\n\t\t\t(-) Subtraction')
 needing \n\t\t\tto visit a given set of cities')
             print('\n\t Option 6 - Coin Change Program ')
             print('\t\t\tAn exercise for children learning to count change')
+            print('\n\t Option 7 - Chinese Zodiac Program ')
+            print('\t\t\tDetermine the animal and associated characteristics from \
+            \n\t\t\tthe Chinese Zodiac for a given year of birth.')
             print('\n\t Option 0 - Exit')
             print('=' * 80)
 
@@ -78,6 +82,11 @@ needing \n\t\t\tto visit a given set of cities')
             elif menu_selection == '6': # Coin Change
                 print('*' * 80)
                 coin_change_calculator()
+                print('*' * 80)
+            
+            elif menu_selection == '7': # Chinese Zodiac
+                print('*' * 80)
+                zodiac_sign()
                 print('*' * 80)
 
             elif menu_selection == '0': # Exit
