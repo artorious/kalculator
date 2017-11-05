@@ -46,6 +46,9 @@ kalculator Menu Options
         <dd>An exercise for children learning to count change</dd>
     <dt>Chinese Zodiac Program</dt>
         <dd>Dispaly your zodiac sign and associated personal characteristics.</dd>
+    <dt>Password Encryption/Decryption Program</dt>
+        <dd>encrypt and decrypt passwords containing uppercase/lowercase characters, 
+        <mark>TODO: Add digits, and special characters.</mark> </dd>
 </dl>
 
 
