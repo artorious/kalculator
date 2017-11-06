@@ -36,15 +36,19 @@ while not terminate:    # Prompt for yrs until quit
 
         if year == -1:
             terminate = True # terminate program
-        else:
-            pass
+        
+        else:# Determine if leap year
+            if (year % 4 == 0) and (not (year % 100 == 0) or (year % 400 == 0)):
+                leap_year = True
+            else:
+                leap_year = True
 
     except ValueError:
         print('INVALID input......Enter year [YYYY]')
 
 
 
-# Determine if leap year
+
 
 # Determine Day of week for 1st Jan of the yr
     # No. of days in each month (accounting for leap yrs)
