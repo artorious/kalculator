@@ -1,0 +1,10 @@
+An algorithm for determining the day of the week for January 1, of a given year
+
+	1. Let century_digits be equal to the first two digits of the year.
+	2. Let year_digits be equal to the last two digits of the year.
+	3. Let Value be equal to year_digits + floor(year_digits/4)
+	4. If century_digits equals 18, then add 2 to value, else
+		If century_digits equals 20, then add 6 to value.
+	5. If year is not a leap year then add 1 to value.
+    6. Set value equal to (value + day)mod7.
+	7. If value is equal to 1(Sunday), 2(Monday), .... )(Saturday)

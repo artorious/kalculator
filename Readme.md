@@ -49,6 +49,11 @@ kalculator Menu Options
     <dt>Password Encryption/Decryption Program</dt>
         <dd>encrypt and decrypt passwords containing uppercase/lowercase characters, 
         <mark>TODO: Add digits, and special characters.</mark> </dd>
+    <dt>Calender Year Program</dt>
+        <dd>Display a calender Year for any given year 1800 - 2099, inclusive</dd>
+        <dd>
+            <img src='static/calender_year_display_format.png' alt='The calender format for the year'>
+        </dd>
 </dl>
 
 
