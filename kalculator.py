@@ -13,7 +13,7 @@ from scripts.arithmetic_ops import ArithmeticOperations as kalq
 from scripts.seti_drake_eq import drake_eq
 from scripts.age_in_secs import AgeInSecs
 from scripts.coin_change import coin_change_calculator
-from scripts.calender_month import calender_month_format
+from scripts.calendar_month import calendar_month_format
 from scripts.chinese_zodiac import zodiac_sign
 from scripts.password_encrypt_decrypt import encrypt_decrypt
 
@@ -67,9 +67,9 @@ needing \n\t\t\tto visit a given set of cities')
                 drake_eq()
                 print('*' * 80)
             
-            elif menu_selection == '3': # Calender month-view
+            elif menu_selection == '3': # Calendar month-view
                 print('*' * 80)
-                calender_month_format()
+                calendar_month_format()
                 print('*' * 80)
 
             elif menu_selection == '4': # Age in secs

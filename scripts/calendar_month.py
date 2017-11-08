@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-''' A Calender Month Program
+''' A Calendar Month Program
 
 Displays a calendar month for any given month between January 1800 and December 2099. 
 
 Display Features:
-    - The calender month 
+    - The calendar month 
     - The given the day of the week that the first day falls on  
     - The number of days in the month
 '''
 
 
 
-def calender_month_format():
+def calendar_month_format():
     '''Displays a calendar month for any given month between January 1800 and December 2099'''
     # Program Initialization
     terminate = False # Control program termination
  
     # Program greeting
     print('=' * 80)
-    print(format(' CALENDER MONTH ', '=^80'))
+    print(format(' CALENDAR MONTH ', '=^80'))
     print('=' * 80)
-    print('This program will display a calender month between the years 1800 and 2099')
+    print('This program will display a calendar month between the years 1800 and 2099')
     print('-' * 80)
 
     while not terminate:

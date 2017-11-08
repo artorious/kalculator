@@ -28,12 +28,12 @@ kalculator Menu Options
                 N&equals;R&#8729;p&#8729;n&#8729;f&#8729;i&#8729;c&#8729;L
             </a>
         </dd>
-    <dt>Calender Month Program</dt>
-        <dd>Display a calender month for any given month between January 1800 
+    <dt>Calendar Month Program</dt>
+        <dd>Display a calendar month for any given month between January 1800 
             and December 2099
         </dd>
         <dd>
-            <img src='static/calendar_month_display_format.png' alt='The calender format of the month'>
+            <img src='static/calendar_month_display_format.png' alt='The calendar format of the month'>
         </dd>
     <dt>Age in Seconds</dt>
         <dd>Approximating a person's age in seconds</dd>
@@ -49,10 +49,10 @@ kalculator Menu Options
     <dt>Password Encryption/Decryption Program</dt>
         <dd>encrypt and decrypt passwords containing uppercase/lowercase characters, 
         <mark>TODO: Add digits, and special characters.</mark> </dd>
-    <dt>Calender Year Program</dt>
-        <dd>Display a calender Year for any given year 1800 - 2099, inclusive</dd>
+    <dt>Calendar Year Program</dt>
+        <dd>Display a calendar Year for any given year 1800 - 2099, inclusive</dd>
         <dd>
-            <img src='static/calender_year_display_format.png' alt='The calender format for the year'>
+            <img src='static/calendar_year_display_format.png' alt='The calendar format for the year'>
         </dd>
 </dl>
 
@@ -66,7 +66,7 @@ $ <kbd>python3 kalculator.py</kbd>
 
 Pseudocode Reference
 ====================
-Calender month program:
+Calendar month program:
 [An algorithm for determining the day of the week for any date between January 1, 1800 and December 31, 2099.](pseudocode/day_of_week_algorithm_pseudo.txt)
 <br>
 [An algorithm for determinig leap years]ph(pseudocode/leap_year_algorithm_pseudo.txt)
