@@ -16,6 +16,7 @@ from scripts.coin_change import coin_change_calculator
 from scripts.calendar_month import calendar_month_format
 from scripts.chinese_zodiac import zodiac_sign
 from scripts.password_encrypt_decrypt import encrypt_decrypt
+from scripts.calendar_year import calendar
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -53,11 +54,12 @@ needing \n\t\t\tto visit a given set of cities')
             \n\t\t\tthe Chinese Zodiac for a given year of birth.')
             print('\n\t Option 8 - Password Encryption/Decryption Program ')
             print('\t\t\tEncrypt/Decrypt a Pass-Phrase.')
+            print('\n\t Option 9 - Calender - Year View')
             print('\n\t Option 0 - Exit')
             print('=' * 80)
 
             # Wait for user input
-            menu_selection = input('Enter Option Number [0 - 5]: ')
+            menu_selection = input('Enter Option Number [0 - 9]: ')
 
             if menu_selection == '1': # Arithmetic Operations
                 kalq.arithmetic_ops_menu()
@@ -95,6 +97,11 @@ needing \n\t\t\tto visit a given set of cities')
             elif menu_selection == '8': # Encrypt/Decrypt
                 print('*' * 80)
                 encrypt_decrypt()
+                print('*' * 80)
+
+            elif menu_selection == '9': # Calendar Year
+                print('*' * 80)
+                calendar()
                 print('*' * 80)
 
             elif menu_selection == '0': # Exit
