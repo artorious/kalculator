@@ -117,16 +117,47 @@ while not terminate:    # Prompt for yrs until quit
                 calendar_year += [calendar_month]
                 calendar_month = []
 
-        print(calendar_year)    
+            # Display Calender year
+            print('\n', year, '\n') # Display the year
 
-        # reset for another year
-        calendar_year = []
+            # Each row of months starts with Jan, Apr, Jul or Oct
+            # Thus when month_num is 0, months 0-2 (Jan-Mar) are displayed
+            # When month_num is 3, months 3-5 (Apr-Jun) are dispalyed, and so forth
+            for month_num in [0, 3, 6, 9]:
+                
+                # Display 3 months in each row (E.g Jan, Feb, and Mar). Each is displayed left-justified in a field width of 19. 
+                # A leading blank character is appended to the formatting string to align with the first column of numbers displayed for each month. The print(. . ., end = '') form of print is used, which prevents the cursor from moving to the next line. Thus, the months can be displayed side-by-side. 
+                # Variable month_separator contains the appropriate number of blank spaces (initialized at the top of the program) to provide the required amount of padding between the months.
+                for i in range(month_num, month_num + 3):
+                    print(' ' + format(month_names[i], '19'), month_separator, end=' ')
+                print('\n')
 
+                # Display each week of months on separate lines
+                # Init
+                week = 0 # keep count of number of weeks displayed
+                lines_to_print = True
+
+                while lines_to_print:
+                    lines_to_print = False # Init
+
+                    # another week to display for the first month in row?
+                    for k in range(month_num, month_num + 3):
+                        if week < len(calendar_year[k]):
+                            print(calendar_year[k][week], end='')
+                            lines_to_print = True
+                        else:
+                            print(blank_week, end='')
+                        
+                        print(month_separator, end='')
+                    # move to the next screen line
+                    print()
+
+                    # Increament week
+                    week += 1
 
     except ValueError:
         print('INVALID input......Enter year [YYYY]')
+        
 
 
-# Construct Calender year
 
-# Display Calender year
