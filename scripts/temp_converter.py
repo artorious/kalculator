@@ -20,7 +20,10 @@ def get_conversion_type():
     '''Prompt user for Conversion Type.
     Fahreheit to Celcius & vice-versa
     '''
-    return
+    selection = input('Enter selection (F/C): ')
+    while selection.upper() != "F" and selection.upper() != 'C':
+        selection = input('Enter selection (F/C): ')
+    return selection
 
 def display_fahren_to_celcius(start, end):
     '''convert a range of values from Fahrenheit to Celsius.'''
@@ -43,11 +46,11 @@ def convert_temp():
 
     while not proper_conversion_units: # Error-Check user input
         try:
-            temp_start = int(input('Enter Starting temperature value to convert: '))
-            temp_end = int(input('Enter Ending temperature value to convert: '))
+            temp_start = float(input('Enter Starting temperature value to convert: '))
+            temp_end = float(input('Enter Ending temperature value to convert: '))
             proper_conversion_units = True
         except ValueError:
-            print('Expected integers')
+            print('Expected integers or floating-point numbers')
 
     if which == 'F':
         display_fahren_to_celcius(temp_start, temp_end)
