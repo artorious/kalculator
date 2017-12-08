@@ -20,19 +20,30 @@ def get_conversion_type():
     '''Prompt user for Conversion Type.
     Fahreheit to Celcius & vice-versa
     '''
-    selection = input('Enter selection (F/C): ')
-    while selection.upper() != "F" and selection.upper() != 'C':
+    selection = input('Enter selection (F/C): ').upper()
+    while selection != "F" and selection != 'C': # Error-check
         selection = input('Enter selection (F/C): ')
     return selection
 
 def display_fahren_to_celcius(start, end):
     '''convert a range of values from Fahrenheit to Celsius.'''
-    pass
+    print('\n')
+    print(format('Degrees', '^12'), format('Degrees', '^12'))
+    print(format('Fahrenheit', '^12'), format('Celcius', '^12'))
+    
+    for temp in range(start, end + 1):
+        converted_temp = (temp - 32) * 5/9
+        print(format(temp, '9.1f'), format(converted_temp, '9.1f'))
 
 def display_celcius_to_fahren(start, end):
     '''convert a range of values from Celsius to Fahrenheit.'''
-    pass
+    print('\n')
+    print(format('Degrees', '^12'), format('Degrees', '^12'))
+    print(format('Celcius', '^12'), format('Fahrenheit', '^12'))
 
+    for temp in range(start, end + 1):
+        converted_temp = (9/5 * temp) + 32
+        print(format(temp, '9.1f'), format(converted_temp, '9.1f'))
 
 def convert_temp():
     '''convert a range of values from Fahrenheit to Celsius, 
@@ -46,11 +57,11 @@ def convert_temp():
 
     while not proper_conversion_units: # Error-Check user input
         try:
-            temp_start = float(input('Enter Starting temperature value to convert: '))
-            temp_end = float(input('Enter Ending temperature value to convert: '))
+            temp_start = int(input('Enter Starting temperature value to convert: '))
+            temp_end = int(input('Enter Ending temperature value to convert: '))
             proper_conversion_units = True
         except ValueError:
-            print('Expected integers or floating-point numbers')
+            print('Expected integer')
 
     if which == 'F':
         display_fahren_to_celcius(temp_start, temp_end)
