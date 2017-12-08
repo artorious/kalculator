@@ -54,6 +54,9 @@ kalculator Menu Options
         <dd>
             <img src='static/calendar_year_display_format.png' alt='The calendar format for the year'>
         </dd>
+    <dt>Temperature Conversion Program</dt>
+        <dd>The program allows a user to convert a range of values from Fahrenheit to Celsius, 
+        or Celsius to Fahrenheit.</dd>
 </dl>
 
 

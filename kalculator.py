@@ -17,6 +17,7 @@ from scripts.calendar_month import calendar_month_format
 from scripts.chinese_zodiac import zodiac_sign
 from scripts.password_encrypt_decrypt import encrypt_decrypt
 from scripts.calendar_year import calendar
+from scripts.temp_converter import convert_temp
 
 class CalculateSomething(object):
     '''Class holds the routines for various inputs.'''
@@ -55,6 +56,7 @@ needing \n\t\t\tto visit a given set of cities')
             print('\n\t Option 8 - Password Encryption/Decryption Program ')
             print('\t\t\tEncrypt/Decrypt a Pass-Phrase.')
             print('\n\t Option 9 - Calender - Year View')
+            print('\n\t Option 10 - Temperature Conversion Program')
             print('\n\t Option 0 - Exit')
             print('=' * 80)
 
@@ -102,6 +104,11 @@ needing \n\t\t\tto visit a given set of cities')
             elif menu_selection == '9': # Calendar Year
                 print('*' * 80)
                 calendar()
+                print('*' * 80)
+
+            elif menu_selection == '10': # Temperature Conversion
+                print('*' * 80)
+                convert_temp()
                 print('*' * 80)
 
             elif menu_selection == '0': # Exit
