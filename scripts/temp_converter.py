@@ -7,8 +7,14 @@ The script utilizes the following programming features.
     ➤ non-value-returning functions
 '''
 def display_welcome():
-    '''Diaplay Program greeting'''
-    pass
+    '''Display Program greeting'''
+    print('~' * 60)
+    print(format('Temperature Conversion Program', '^60'))
+    print(format('Convert a range of temparatures', '^60'))
+    print('~' * 60)
+    print('Enter (F) to convert Fahrenheit to Celcius')
+    print('Enter (C) to convert Celcius to Fahrenheit')
+    print('~' * 60)
 
 def get_conversion_type():
     '''Prompt user for Conversion Type.
