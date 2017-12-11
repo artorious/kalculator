@@ -1,19 +1,33 @@
 #!/usr/bin/env python3
 '''A simple Python3 calculator'''
 
-class ArithmeticOperations(object):
+class ArithmeticOperations():
     '''Class holds routines for arithmetic Operations;
     exponentiation, multiplication, division, floor division,
     modulus, addititon and subtraction.
     '''
-
     def __init__(self):
-        '''Initialization function.'''
-        pass
-    
-    def arithmetic_ops_menu():
-        '''Displays Arithmetic  Menu Options'''
-        calc = ArithmeticOperations() # Init the class
+        '''Initialization function.
+        Sets up attributes and global variables
+        '''
+
+        # Init
+        self.result = 0.0
+        self.arg1 = 0.0
+        self.arg2 = 0.0
+
+    def get_input(self):
+        '''(ArithmeticOperations) -> tuple
+        Gets user input and assigns to arg1, arg2
+        '''
+        # TODO: error-checking
+        self.arg1 = float(input('Enter the first  value: '))
+        self.arg2 = float(input('Enter the second  value: '))
+        
+        
+
+    def arithmetic_ops_menu(self):
+        '''Displays Arithmetic  Menu Options.'''    
         menu_loop = True
 
         while menu_loop == True:
@@ -22,7 +36,6 @@ class ArithmeticOperations(object):
             print('-' * 80)
             print('\tOperation 1: Addition\t\t(x + y)\n')
             print('\tOperation 2: Subtraction\t(x - y)\n')
-
             print('\tOperation 3: Exponentiation\t(x ** y)\n')
             print('\tOperation 4: Floor division\t(x // y)\n')
             print('\tOperation 5: Modulus division\t(x % y)\n')
@@ -31,21 +44,21 @@ class ArithmeticOperations(object):
             # User input
             arithmetic_selection = input('Select Operation [0-5]: ')
 
-            # Handle user's option
+             # Handle user's option
             if arithmetic_selection == '1': # Addition
-                calc.addititon_func()
+                self.addititon_func()
 
             elif arithmetic_selection == '2': # Subtraction
-                calc.subtraction_func()
+                self.subtraction_func()
 
             elif arithmetic_selection == '3': # Exponentiation
-                calc.exponentiation_func()
+                self.exponentiation_func()
 
             elif arithmetic_selection == '4': # Floor Division
-                calc.floor_division_func()
+                self.floor_division_func()
 
             elif arithmetic_selection == '5': # Modulo
-                calc.modulo_func()
+                self.modulo_func()
 
             elif arithmetic_selection == '0':
                 print('Exiting Calculator.....')
@@ -53,94 +66,83 @@ class ArithmeticOperations(object):
             else:
                 print('*' * 80)
                 print('{0}  NOT a menu Option.'.format(arithmetic_selection))
-                print('Try again..........')
-
-
+                print('Try again..........')        
+    
     def addititon_func(self):
-        '''adds up two numbers from user.
-        Takes integers, floating-point and scientific notation numbers. 
+        '''Performs addition.  
+        Prints a formatted string: arg1 + arg2 = result'''
+        terminate = False # Control task repetition
+        while not terminate: 
+            print(format(' Addition  ', '.^80' ))
+            self.get_input()
+            self.result = self.arg1 + self.arg2
+            print('Result: \v{0} + {1} = {2:,.2f} or {2:2e}'.format(self.arg1,self.arg2,self.result))
+            return_to_menu = input('Press ENTER to calculate again or [q/Q] to Return to Main menu -> ')
+
+            if return_to_menu.upper() == 'Q':
+                terminate = True
         
-        Prints num1 + num2 = sum (exactly two decimal places.)
-        ''' 
-        print(format(' Addition  ', '.^80' ))
-        print(format(' first value + second value  ', '.^80' )) 
-# TODO: Error Checking
-        num1 = float(input('Enter the first  value: '))
-        num2 = float(input('Enter the second  value: '))
-        print('\n')
-        print(' Result: {0} + {1} = {2:,.2f} or {2:2e}'.format(num1, num2, 
-                                                                num1 + num2))
-        print('\n')
-        print('.' * 80)
-        return_to_menu = input('\tPress A key to Return to Main menu ->')
 
     def subtraction_func(self):
-        '''subtracts two numbers from user. 
-        Takes integers, floating-point and scientific notation numbers. 
-        
-        Prints num1 - num2 = difference (exactly two decimal places.)
-        '''
-        print(format(' Subtraction  ', '.^80' ))
-        print(format(' first value - second value  ', '.^80' ))
-# TODO: Error Checking
-        num1 = float(input('Enter the first  value: '))
-        num2 = float(input('Enter the second  value: '))
-        print('\n')
-        print('Result: {0} - {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
-                                                                num1 - num2))
-        print('\n')
-        return_to_menu = input('\tPress A key to Return to Main menu ->') 
+        '''Performs subtraction
+        Prints a formatted string: arg1 - arg2 = result'''
+        terminate = False # Control task repetition
+        while not terminate: 
+            print(format(' Subtraction  ', '.^80' ))
+            self.get_input()
+            self.result = self.arg1 - self.arg2
+            print('Result: \v{0} - {1} = {2:,.2f} or {2:2e}'.format(self.arg1,self.arg2,self.result))
+            return_to_menu = input('Press ENTER to calculate again or [q/Q] to Return to Main menu -> ')
 
+            if return_to_menu.upper() == 'Q':
+                terminate = True
+            
     def exponentiation_func(self):
         '''exponetiates two numbers from user.
-        Takes integers, floating-point and scientific notation numbers. 
-        
-        Prints num1 - num2 = exponent (exactly two decimal places.)
-        ''' 
-        print(format(' Exponentiation  ', '.^80' ))
-        print(format(' first value ** second value  ', '.^80' ))
-# TODO: Error Checking
-        num1 = float(input('Enter the first  value: '))
-        num2 = float(input('Enter the second  value: '))
-        print('\n')
-        print('Result: {0} ** {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
-                                                                num1 ** num2))
-        print('\n')
-        return_to_menu = input('Press A key to Return to Main menu ->')
+        Prints a formatted string: arg1 ** arg2 = result'''
+
+        terminate = False # Control task repetition
+        while not terminate: 
+            print(format(' Exponetiation  ', '.^80' ))
+            self.get_input()
+            self.result = self.arg1 ** self.arg2
+            print('Result: \v{0} ** {1} = {2:,.2f} or {2:2e}'.format(self.arg1,self.arg2,self.result))
+            return_to_menu = input('Press ENTER to calculate again or [q/Q] to Return to Main menu -> ')
+
+            if return_to_menu.upper() == 'Q':
+                terminate = True
 
     def floor_division_func(self):
         '''performs truncating division on two numbers from user. 
-        Takes integers, floating-point and scientific notation numbers. 
-        
-        Prints num1 // num2 = result (exactly two decimal places.)
-        '''
-        print(format(' Floor Division  ', '.^80' ))
-        print(format(' first value // second value  ', '.^80' ))
-# TODO: Error Checking
-        num1 = float(input('Enter the first  value: '))
-        num2 = float(input('Enter the second  value: '))
-        print('\n')
-        print('Result: {0} // {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
-                                                                num1 // num2))
-        print('\n')
-        return_to_menu = input('\tPress A key to Return to Main menu ->')
+        Prints a formatted string: arg1 // arg2 = result'''
+
+        terminate = False # Control task repetition
+        while not terminate: 
+            print(format(' Subtraction  ', '.^80' ))
+            self.get_input()
+            self.result = self.arg1 // self.arg2
+            print('Result: \v{0} // {1} = {2:,.2f} or {2:2e}'.format(self.arg1,self.arg2,self.result))
+            return_to_menu = input('Press ENTER to calculate again or [q/Q] to Return to Main menu -> ')
+
+            if return_to_menu.upper() == 'Q':
+                terminate = True
+
 
     def modulo_func(self):
         '''performs modulo division on two numbers from user.  
-        Takes integers, floating-point and scientific notation numbers. 
-        
-        Prints num1 % num2 = result (exactly two decimal places.)
-        '''
-        print(format(' Modulo-Division  ', '.^80' ))
-        print(format(' first value % second value  ', '.^80' ))
-# TODO: Error Checking
-        num1 = float(input('Enter the first  value: '))
-        num2 = float(input('Enter the second  value: '))
-        print('\n')
-        print('Result: {0} % {1} = {2:,.2f} or {2:.2e}'.format(num1, num2, 
-                                                                num1 % num2))
-        print('\n')
-        return_to_menu = input('\tPress A key to Return to Main menu ->')
+        Prints a formatted string: arg1 % arg2 = result'''
+
+        terminate = False # Control task repetition
+        while not terminate: 
+            print(format(' Subtraction  ', '.^80' ))
+            self.get_input()
+            self.result = self.arg1 % self.arg2
+            print('Result: \v{0} % {1} = {2:,.2f} or {2:2e}'.format(self.arg1,self.arg2,self.result))
+            return_to_menu = input('Press ENTER to calculate again or [q/Q] to Return to Main menu -> ')
+
+            if return_to_menu.upper() == 'Q':
+                terminate = True
+
 
 if __name__ == '__main__':
-    ArithmeticOperations.arithmetic_ops_menu()
+    ArithmeticOperations().arithmetic_ops_menu()

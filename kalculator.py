@@ -64,7 +64,7 @@ needing \n\t\t\tto visit a given set of cities')
             menu_selection = input('Enter Option Number [0 - 9]: ')
 
             if menu_selection == '1': # Arithmetic Operations
-                kalq.arithmetic_ops_menu()
+                kalq().arithmetic_ops_menu()
                 
             elif menu_selection == '2': # SETI
                 print('*' * 80)
