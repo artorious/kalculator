@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-'''A simple Python3 calculator'''
+"""A simple Python3 calculator"""
 
 class ArithmeticOperations():
-    '''Class holds routines for arithmetic Operations;
+    """Class holds routines for arithmetic Operations;
     exponentiation, multiplication, division, floor division,
     modulus, addititon and subtraction.
-    '''
+    """
     def __init__(self):
-        '''Initialization function.
+        """Initialization function.
         Sets up attributes and global variables
-        '''
+        """
 
         # Init
         self.result = 0.0
@@ -17,17 +17,26 @@ class ArithmeticOperations():
         self.arg2 = 0.0
 
     def get_input(self):
-        '''(ArithmeticOperations) -> tuple
-        Gets user input and assigns to arg1, arg2
-        '''
-        # TODO: error-checking
-        self.arg1 = float(input('Enter the first  value: '))
-        self.arg2 = float(input('Enter the second  value: '))
-        
-        
+        """(ArithmeticOperations) -> float, float
+        Prompt user for two numbers to operate on
+        Gets user input and assigns the floats to arg1, arg2
+        """
+        # init simple error-checking
+        valid_value = False
+
+        while not valid_value:
+            try:
+                self.arg1 = float(input('Enter the first  value: '))
+                self.arg2 = float(input('Enter the second  value: ')) 
+                valid_value = True # Terminate loop after getting a valid value
+            
+            except ValueError:
+                print('Expected a number')
+                print('Please enter a floating-point number')
+                continue # Try Again
 
     def arithmetic_ops_menu(self):
-        '''Displays Arithmetic  Menu Options.'''    
+        """Displays Arithmetic  Menu Options."""
         menu_loop = True
 
         while menu_loop == True:
@@ -69,8 +78,9 @@ class ArithmeticOperations():
                 print('Try again..........')        
     
     def addititon_func(self):
-        '''Performs addition.  
-        Prints a formatted string: arg1 + arg2 = result'''
+        """Performs addition.  
+        Prints a formatted string: arg1 + arg2 = result
+        """
         terminate = False # Control task repetition
         while not terminate: 
             print(format(' Addition  ', '.^80' ))
@@ -84,8 +94,9 @@ class ArithmeticOperations():
         
 
     def subtraction_func(self):
-        '''Performs subtraction
-        Prints a formatted string: arg1 - arg2 = result'''
+        """Performs subtraction
+        Prints a formatted string: arg1 - arg2 = result
+        """
         terminate = False # Control task repetition
         while not terminate: 
             print(format(' Subtraction  ', '.^80' ))
@@ -98,8 +109,9 @@ class ArithmeticOperations():
                 terminate = True
             
     def exponentiation_func(self):
-        '''exponetiates two numbers from user.
-        Prints a formatted string: arg1 ** arg2 = result'''
+        """exponetiates two numbers from user.
+        Prints a formatted string: arg1 ** arg2 = result
+        """
 
         terminate = False # Control task repetition
         while not terminate: 
@@ -113,8 +125,9 @@ class ArithmeticOperations():
                 terminate = True
 
     def floor_division_func(self):
-        '''performs truncating division on two numbers from user. 
-        Prints a formatted string: arg1 // arg2 = result'''
+        """performs truncating division on two numbers from user. 
+        Prints a formatted string: arg1 // arg2 = result
+        """
 
         terminate = False # Control task repetition
         while not terminate: 
@@ -129,8 +142,9 @@ class ArithmeticOperations():
 
 
     def modulo_func(self):
-        '''performs modulo division on two numbers from user.  
-        Prints a formatted string: arg1 % arg2 = result'''
+        """performs modulo division on two numbers from user.  
+        Prints a formatted string: arg1 % arg2 = result
+        """
 
         terminate = False # Control task repetition
         while not terminate: 
