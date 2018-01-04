@@ -11,7 +11,7 @@ Features include:
 from scripts.travelling_salesman import routes_possible
 from scripts.arithmetic_ops import ArithmeticOperations as kalq
 from scripts.seti_drake_eq import drake_eq
-from scripts.age_in_secs import AgeInSecs
+from scripts.age_in_secs import menu_options
 from scripts.coin_change import coin_change_calculator
 from scripts.calendar_month import calendar_month_format
 from scripts.chinese_zodiac import zodiac_sign
@@ -78,7 +78,7 @@ needing \n\t\t\tto visit a given set of cities')
 
             elif menu_selection == '4': # Age in secs
                 print('*' * 80)
-                AgeInSecs.menu_options()
+                menu_options()
                 print('*' * 80)
 
             elif menu_selection == '5': # Travelling Salesman

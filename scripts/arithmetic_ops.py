@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """A simple Python3 calculator"""
-
+# TODO: simplify & Decorate methods
 class ArithmeticOperations():
     """Class holds routines for arithmetic Operations;
     exponentiation, multiplication, division, floor division,
@@ -10,7 +10,6 @@ class ArithmeticOperations():
         """Initialization function.
         Sets up attributes and global variables
         """
-
         # Init
         self.result = 0.0
         self.arg1 = 0.0
