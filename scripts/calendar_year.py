@@ -1,12 +1,104 @@
 #!/usr/bin/env python3
+""" A calendar Year Program
+    
+Displays a calendar Year for any given Year between 1800 and 2099, 
+inclusive. 
+Display:
+    + The calendar Year 
+    + The day of the week that the first day falls on  
+    + The number of days in the Year
+"""
+# TODO: Top-Down Design - Modular design
 
-        
+
+def get_year():
+    """ () -> int
+    
+    Returns an integer value between 1800-2099, inclusive, or -1 
+    """
+    return
+
+def leap_year(year):
+    """ (int) -> bool
+
+    Returns True if provided <year> a leap year, otherwise, returns False
+    """
+    return
+
+def day_of_week_jan1(year, leap_year):
+    """ (int, bool) -> int
+
+    Returns the day of the week for January 1 of provided <year>, between 
+    1800 and 2099. <leap_year> is True/False. 
+    """
+    return
+
+def num_days_in_month(month_num, leap_year):
+    """ (int, bool) -> int
+    
+    Returns the number of days in a given month 
+    <month_num> in the range 1-12, inclusive. <leap_year> is True/False. 
+    """
+    return
+
+def construct_cal_month(month_num, first_day_of_month, num_days_in_month):
+    """ (int, int, int) -> list
+
+    Formats and returns calendar month for display on screen.
+    <month_num> in range 1-12  
+    <first_day_of_month> in range 0-6 (1-Sun, 2-Mon, ...., 0-Sat) 
+    <num_days_in_month> in range 1-31
+    
+    Returns a list of strings of the form,
+    [month_name, week1, week2, week3, week4, week5, week6]
+    """
+    return
+
+def construct_cal_year(year):
+    """ (int) -> list
+    
+    Formats and returns calendar for dispaly on screen for the <year> in 
+    range 1800-2099, inclusive. 
+    
+    Returns a list of strings of form,
+    [year, month1, month2, month3, ...., month12]
+    """
+    return
+
+def dispaly_calendar(calendar_year):
+    """ (list) -> str
+
+    Displays the provided <calendar_year> on he screen three months across.
+    <calendar_year> being a list of twelve sublists of the form,
+    [month_name, week1, week2, ...]
+    """
+    pass
+
+
+def main():
+    """ Display Calender """
+    terminate = False # Control program termination
+    print('Display a calendar Year for any given Year between 1800 and 2099')
+
+    while not terminate:
+        year = get_year() # User Input
+
+        if year == -1: # Exit 
+            terminate = True
+        else:
+            calendar_year = construct_cal_year(year)
+            dispaly_calendar(calendar_year)    
+
+if __name__ == '__main__':
+    main()
+
+ #########################################################################       
 def calendar():
-    ''' A Calender Year Program
+    ''' A calendar Year Program
     Displays a calendar Year for any given Year between 1800 and 2099, inclusive. 
 
     Display Features:
-        - The calender Year 
+        - The calendar Year 
         - The day of the week that the first day falls on  
         - The number of days in the Year
     '''
@@ -24,7 +116,7 @@ def calendar():
 
     # Program Greeting
     print('=' * 120)
-    print(format(' CALENDER YEAR ', '=^120'))
+    print(format(' calendar YEAR ', '=^120'))
     print('=' * 120)
     print(format('Displays a Calendar for any given year between 1800 and 2099', 
     '^120'))
@@ -69,7 +161,7 @@ def calendar():
                 #  first day day of month for Jan 1. the days of the week for all remaining dates simply follow.
                 first_day_of_current_month = (value + 1) % 7    
                 
-                # Construct calender for all 12 months
+                # Construct calendar for all 12 months
                 for month_num in range(12):
                     month_name = month_names[month_num]
 
@@ -119,7 +211,7 @@ def calendar():
                     calendar_year += [calendar_month]
                     calendar_month = []
 
-                # Display Calender year
+                # Display calendar year
                 print('\n', year, '\n') # Display the year
 
                 # Each row of months starts with Jan, Apr, Jul or Oct
@@ -160,6 +252,4 @@ def calendar():
         except ValueError:
             print('INVALID input......Enter year [YYYY]')
 
-if __name__ == '__main__':
-    calendar()
 
