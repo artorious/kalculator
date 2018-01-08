@@ -29,14 +29,20 @@ def get_year():
             continue # Promt for valid Input again
     return year
     
-
-
-def leap_year(year):
+def check_leap_year(year):
     """ (int) -> bool
 
     Returns True if provided <year> a leap year, otherwise, returns False
     """
-    return
+    try:
+        if (year % 4 == 0) and (not (year % 100 == 0) or (year % 400 ==0)):
+            leap_year = True
+        else:
+            leap_year = False
+        return leap_year
+    except Exception as err:
+        print('Ooops...Expected Integers - {0}'.format(err))
+        raise Exception
 
 def day_of_week_jan1(year, leap_year):
     """ (int, bool) -> int
