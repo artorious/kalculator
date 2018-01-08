@@ -43,14 +43,33 @@ def check_leap_year(year):
     except Exception as err:
         print('Ooops...Expected Integers - {0}'.format(err))
         raise Exception
-
+# Determine Day of week for 1st Jan of the yr - See Readme for Pseudocode Reference 
 def day_of_week_jan1(year, leap_year):
     """ (int, bool) -> int
 
     Returns the day of the week for January 1 of provided <year>, between 
     1800 and 2099. <leap_year> is True/False. 
     """
-    return
+    try:
+        # Init
+        century_digits = year // 100    # extract first two digits of the year
+        year_digits = year % 100     # extract last two digits of the year            
+        value = year_digits + (year_digits // 4)
+        if century_digits == 18:
+            value += 2
+        elif century_digits == 20:
+            value += 6
+        if not leap_year:   # Adjust for leap yrs
+            value += 1
+
+        # first day day of month for Jan 1.(the days of the week for all remaining dates simply follow)
+        return (value + 1) % 7    
+
+    except Exception as err:
+        print('Ooops...Bad Input - {0}'.format(err))
+        raise Exception
+
+    
 
 def num_days_in_month(month_num, leap_year):
     """ (int, bool) -> int
