@@ -43,7 +43,8 @@ def check_leap_year(year):
     except Exception as err:
         print('Ooops...Expected Integers - {0}'.format(err))
         raise Exception
-# Determine Day of week for 1st Jan of the yr - See Readme for Pseudocode Reference 
+# Determine Day of week for 1st Jan of the yr 
+# See Readme for Pseudocode Reference 
 def day_of_week_jan1(year, leap_year):
     """ (int, bool) -> int
 
@@ -86,10 +87,8 @@ def get_num_days_in_month(month_num, leap_year):
         raise Exception  
     return num_days
 
-    
-
 # Align weeks for display
-def construct_cal_month(month_num, first_day_of_month, num_days_in_month):
+def construct_cal_month(month_num, first_day, num_days_in_month):
     """ (int, int, int) -> list
 
     Formats and returns calendar month for display on screen.
@@ -100,8 +99,47 @@ def construct_cal_month(month_num, first_day_of_month, num_days_in_month):
     Returns a list of strings of the form,
     [month_name, week1, week2, week3, week4, week5, week6]
     """
-    return
-# Iterate once for each of the 12 months, calling construct_cal_month() and append each to list of lists
+    # Init
+    empty_str = ''
+    blank_col = format(' ', '3')
+    blank_week = format(' ', '21')
+    month_names = ('January', 'February', 'March',
+                    'April', 'May', 'June',
+                    'July', 'August', 'September', 
+                    'October', 'November', 'December')
+    calendar_month = [' {0:<20}'.format(month_names[month_num - 1])]
+    current_day = 1
+    current_col = 1
+    calendar_week = ''
+    
+    # Init starting column
+    if first_day == 0:
+        starting_col = 7
+    else:
+        starting_col = first_day
+    # Add any needed leading spaces for first week of the month
+    while current_col < starting_col:
+        calendar_week += blank_col
+        current_col += 1
+    # Construct month for proper number of days
+    while current_day <= num_days_in_month:
+        # Store day of month in fiels of length 3
+        calendar_week += format(str(current_day), '>3')
+        # Append new week to month if at the end of week
+        if current_col == 7:
+            calendar_month += [calendar_week]
+            calendar_week = empty_str
+            current_col = 1
+        else:
+            current_col += 1
+        current_day += 1
+    # If there is a final week, append to constructed month
+    if calendar_week != empty_str:
+        calendar_month = calendar_month + [calendar_week]
+    return calendar_month
+
+# Iterate once for each of the 12 months, calling construct_cal_month() and 
+# append each to list of lists
 def construct_cal_year(year):
     """ (int) -> list
     
@@ -112,6 +150,8 @@ def construct_cal_year(year):
     [year, month1, month2, month3, ...., month12]
     """
     return
+    
+
 # Display calendar year structure in four rows of months, three months across
 def dispaly_calendar(calendar_year):
     """ (list) -> str
