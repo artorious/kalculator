@@ -69,15 +69,25 @@ def day_of_week_jan1(year, leap_year):
         print('Ooops...Bad Input - {0}'.format(err))
         raise Exception
 
-    
-
-def num_days_in_month(month_num, leap_year):
+def get_num_days_in_month(month_num, leap_year):
     """ (int, bool) -> int
     
     Returns the number of days in a given month 
     <month_num> in the range 1-12, inclusive. <leap_year> is True/False. 
     """
-    return
+    # Init
+    num_days_in_month = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+    if (month_num == 2) and leap_year is True: # handle Feb for leap
+        num_days = 29
+    elif month_num in num_days_in_month and leap_year is not True:
+        num_days = num_days_in_month[month_num - 1]
+    else:
+        print('<month_num> in the range 1-12, inclusive. <leap_year> is True/False')
+        raise Exception  
+    return num_days
+
+    
+
 # Align weeks for display
 def construct_cal_month(month_num, first_day_of_month, num_days_in_month):
     """ (int, int, int) -> list
