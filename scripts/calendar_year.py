@@ -8,7 +8,6 @@ Display:
     + The day of the week that the first day falls on  
     + The number of days in the Year
 """
-# TODO: Add initial implementation of calendar year program
 
 def get_year():
     """ () -> int
@@ -78,13 +77,10 @@ def get_num_days_in_month(month_num, leap_year):
     """
     # Init
     num_days_in_month = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-    if (month_num == 2) and leap_year is True: # handle Feb for leap
+    if (month_num == 2) and leap_year:
         num_days = 29
-    elif month_num in num_days_in_month:
-        num_days = num_days_in_month[month_num - 1]
     else:
-        print('<month_num> in the range 1-12, inclusive. <leap_year> is True/False')
-        raise Exception
+        num_days = num_days_in_month[month_num - 1]
     return num_days
 
 # Align weeks for display
@@ -119,15 +115,15 @@ def construct_cal_month(month_num, first_day, num_days_in_month):
         starting_col = first_day
     # Add any needed leading spaces for first week of the month
     while current_col < starting_col:
-        calendar_week += blank_col
+        calendar_week = calendar_week + blank_col
         current_col += 1
     # Construct month for proper number of days
     while current_day <= num_days_in_month:
         # Store day of month in fiels of length 3
-        calendar_week += format(str(current_day), '>3')
+        calendar_week = calendar_week + format(str(current_day), '>3')
         # Append new week to month if at the end of week
         if current_col == 7:
-            calendar_month += [calendar_week]
+            calendar_month = calendar_month + [calendar_week]
             calendar_week = empty_str
             current_col = 1
         else:
@@ -170,10 +166,33 @@ def dispaly_calendar(calendar_year):
     <calendar_year> being a list of twelve sublists of the form,
     [month_name, week1, week2, ...]
     """
-    pass
+    month_separator = format(' ', '8')
+    blank_week = format(' ', '21')
+    # dispaly year
+    print('\n', calendar_year[0])
+    # display months three across
+    for month_index in [1, 4, 7, 10]:
+        # Init
+        week = 1
+        lines_to_print = True
+        while lines_to_print:
+            # Init
+            lines_to_print = False
+            # print weeks of months side-by-side
+            for a_col in range(month_index, month_index + 3):
+                if week <= len(calendar_year[a_col]):
+                    week_dates = calendar_year[a_col][week - 1]
+                    print(week_dates + blank_week[len(week_dates) :], end='')
+                    lines_to_print = True
+                else:
+                    print(blank_week, end='')
+                print(month_separator, end='')
+            # move to the next line
+            print()
+            week +=1 # Increament week
 
 
-def main():
+def calendar():
     """ Display Calender """
     terminate = False # Control program termination
     print('Display a calendar Year for any given Year between 1800 and 2099')
@@ -188,5 +207,5 @@ def main():
             dispaly_calendar(calendar_year)    
 
 if __name__ == '__main__':
-    main()
+    calendar()
 
