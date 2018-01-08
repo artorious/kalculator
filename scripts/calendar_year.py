@@ -80,11 +80,11 @@ def get_num_days_in_month(month_num, leap_year):
     num_days_in_month = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
     if (month_num == 2) and leap_year is True: # handle Feb for leap
         num_days = 29
-    elif month_num in num_days_in_month and leap_year is not True:
+    elif month_num in num_days_in_month:
         num_days = num_days_in_month[month_num - 1]
     else:
         print('<month_num> in the range 1-12, inclusive. <leap_year> is True/False')
-        raise Exception  
+        raise Exception
     return num_days
 
 # Align weeks for display
@@ -149,8 +149,18 @@ def construct_cal_year(year):
     Returns a list of strings of form,
     [year, month1, month2, month3, ...., month12]
     """
-    return
-    
+    # Init
+    leap_year = check_leap_year(year)
+    first_day_of_month = day_of_week_jan1(year, leap_year)
+    calendar_year = [year]
+    # Construct calendar from twelve constructed months
+    for month_num in range(1, 13):
+        num_days_in_month = get_num_days_in_month(month_num, leap_year)
+        calendar_year. append(
+            construct_cal_month(
+                month_num, first_day_of_month, num_days_in_month))
+        first_day_of_month = (first_day_of_month + num_days_in_month) % 7
+    return calendar_year
 
 # Display calendar year structure in four rows of months, three months across
 def dispaly_calendar(calendar_year):
